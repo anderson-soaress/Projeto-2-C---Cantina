@@ -22,6 +22,6 @@ MEMBROS
 
 Anderson Soares de Santana Junior
 Gustavo de Jesus de Oliveira
-João Pedro
+João Pedro Pedro de Souza Barros
 
 A ideia do grupo é criar um projeto para organização da cantina.
