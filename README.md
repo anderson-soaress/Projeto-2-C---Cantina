@@ -16,7 +16,7 @@ A principio a ideia é otimizar o pedido do almoço, algo que atualmente leva mu
 -pedido do alunos através de um cadastro
 
 Outra ideia também, é desenvolver uma especie de saldo, pois muitas vezes a cantina fica sem troco, e quando isso acontecer o aluno receberá um saldo em sua conta, 
-e até mesmo pode ser usado para o aluno "depositar" certa quantia, não precisando levar o dinheiro para escola
+e até mesmo pode ser usado para o aluno "depositar" certa quantia, não precisando levar o dinheiro para escola.
 
 MEMBROS
 
