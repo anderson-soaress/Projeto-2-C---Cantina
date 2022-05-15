@@ -20,8 +20,4 @@ e até mesmo pode ser usado para o aluno "depositar" certa quantia, não precisa
 
 MEMBROS
 
-Anderson Soares de Santana Junior
-Gustavo de Jesus de Oliveira
-João Pedro Pedro de Souza Barros
-
-A ideia do grupo é criar um projeto para organização da cantina.
+Anderson Soares de Santana Junior, Gustavo de Jesus de Oliveira, João Pedro Pedro de Souza Barros
