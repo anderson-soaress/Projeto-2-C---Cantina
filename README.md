@@ -1,4 +1,17 @@
-# Projeto-2-C - Cantina
+
+
+
+
+![Cantina (1)](https://user-images.githubusercontent.com/89814011/171965959-d2a26959-4c78-4c80-9686-4a5ccca294bd.gif)
+
+
+<h4 align="center"> 
+    :construction:  Projeto em construção  :construction:
+</h4>
+
+<p align="center">
+<img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/>
+</p>
 
 NOME DO PROJETO
 
@@ -17,6 +30,22 @@ A principio a ideia é otimizar o pedido do almoço, algo que atualmente leva mu
 
 Outra ideia também, é desenvolver uma especie de saldo, pois muitas vezes a cantina fica sem troco, e quando isso acontecer o aluno receberá um saldo em sua conta, 
 e até mesmo pode ser usado para o aluno "depositar" certa quantia, não precisando levar o dinheiro para escola.
+
+EUNIÃO COM CLIENTE
+
+Nome da empresa: Clube do chefe
+Publico alvo: Discentes e servidores do IFBA
+Responsavel pela cantina: Thais Oliveira
+Número de Funcionarios: 5 pessoas
+
+Dias de venda em periodo integral(marmita): Quarta e quinta
+Marmitas comercializadas em dias integrais(qua/qui): Em média 47 marmitas
+Conteúdo da marmita: 
+- Com relação a proteina: Frango, bife ou ovo
+- Com relação a caboidratos: Arroz tropeiro(qua) e arroz carioca(qui)
+
+Como é feito o pedido: Reserva de marmita
+Pagamento: Dinheiro, cartão e pix
 
 MEMBROS
 
