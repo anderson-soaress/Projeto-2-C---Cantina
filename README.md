@@ -15,7 +15,7 @@ Cantina escolar
 # JUSTIFICATIVA
 
 A ideia do projeto é desenvolver um software que organize a cantina de uma escola, além da organização, esse projeto busca também a facilidade e rapidez nos pedidos, 
-evitando filas demoradas e etc..
+evitando filas demoradas entre outros.
 
 # DESCRICÃO DO PRODUTO
 
