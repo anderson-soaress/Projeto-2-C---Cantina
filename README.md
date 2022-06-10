@@ -26,25 +26,6 @@ A principio a ideia é otimizar o pedido do almoço, algo que atualmente leva mu
 Outra ideia também, é desenvolver uma especie de saldo, pois muitas vezes a cantina fica sem troco, e quando isso acontecer o aluno receberá um saldo em sua conta, 
 e até mesmo pode ser usado para o aluno "depositar" certa quantia, não precisando levar o dinheiro para escola.
 
-<h1 align="center"> REUNIÃO COM CLIENTE  </h1>
-
-Nome da empresa: Clube do chefe
-
-Publico alvo: Discentes e servidores do IFBA
-
-Responsavel pela cantina: Thais Oliveira
-
-Número de Funcionarios: 5 pessoas
-
-Dias de venda em periodo integral(marmita): Quarta e quinta
-Marmitas comercializadas em dias integrais(qua/qui): Em média 47 marmitas
-Conteúdo da marmita: 
-- Com relação a proteina: Frango, bife ou ovo
-- Com relação a caboidratos: Arroz tropeiro(qua) e arroz carioca(qui)
-
-Como é feito o pedido: Reserva de marmita
-Pagamento: Dinheiro, cartão e pix
-
 MEMBROS
 
 
