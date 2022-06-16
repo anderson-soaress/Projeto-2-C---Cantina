@@ -20,12 +20,8 @@ falta de produto, dentre outros problemas. Por esses motivos, decidimos desenvol
 
 # DESCRICÃO DO PRODUTO
 
-A principio a ideia é otimizar o pedido do almoço, algo que atualmente leva muito tempo e causa diversos problemas, como troca de marmitas, então teremos uma:
--descrição do almoço do dia
--pedido do alunos através de um cadastro
-
-Outra ideia também, é desenvolver uma especie de saldo, pois muitas vezes a cantina fica sem troco, e quando isso acontecer o aluno receberá um saldo em sua conta, 
-e até mesmo pode ser usado para o aluno "depositar" certa quantia, não precisando levar o dinheiro para escola.
+O Sistema de Gerenciamento e Organização da Cantina é uma solução para automatização da compra de produtos oferecidos pela cantina. Fornece funcionalidades para automatizar o processo de compra dos clientes.
+Mais informações na documentação.
 
 MEMBROS
 
