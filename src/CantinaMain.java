@@ -1,3 +1,4 @@
+import jdk.swing.interop.SwingInterOpUtils;
 
 import java.util.Random;
 
@@ -6,35 +7,27 @@ import java.util.Scanner;
 public class CantinaMain {
     public static void main(String[] args) {
 
-
-
         //registra input
         Scanner sc = new Scanner(System.in);
         Scanner name = new Scanner(System.in);
         Scanner pedido = new Scanner(System.in);
 
-        //gera um codigo aleatorio, de 0 ate 200, 
+        //gera um codigo aleatorio, de 0 ate 200,
         Random rand = new Random();
         int limit = 200;
+        int escolhaMenu = 1;
 
 
-        MenuS mn = new MenuS();
-        mn.menuu();
+        while (escolhaMenu == 1) {
+            // CHAMA O MENU E LÊ O NUMERO DIGITADO
+            MenuS mn = new MenuS();
+            mn.menuu();
+            escolhaMenu = sc.nextInt();
 
+            switch (escolhaMenu) {
 
-
-        int esc = sc.nextInt();
-
-        int re = 0;
-
-        //area seleçao menu, lembrar de voltar o metodo
-        //talvez nao usar switch
-
-        switch (re) {
-            default:
-            switch (esc) {
+                // CRIA NOVA LISTA
                 case 1:
-
                     Cliente cl = new Cliente();
                     cl.cc();
                     String nome = name.nextLine();
@@ -44,30 +37,30 @@ public class CantinaMain {
 
                     cl.codig();
                     int int_random = rand.nextInt(limit);
+
                     System.out.println(int_random);
 
                     System.out.println("CLIENTE: " + nome + " PEDIDO: " + ped + " CODIGO: " + int_random);
 
-
                     break;
+
+                // ACESSAR LISTAS
                 case 2:
                     System.out.println("");
+
                     break;
+
+                // ENCERRAR
                 case 3:
                     System.out.close();
+
+                    // Se o número escolhido nao for 1,2 ou 3
                 default:
-                    System.out.println("INSIRA O NUMERO DE 1 A 3");
-
-
-
+                    System.out.println("");
+                    System.out.println("POR FAVOR ESCOLHA UMA DESSAS OPÇÕES");
+                    System.out.println("");
+                    escolhaMenu = 1;
             }
-
         }
-
-
     }
 }
-
-
-
-
