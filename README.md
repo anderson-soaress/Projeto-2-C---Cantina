@@ -10,12 +10,13 @@
 
 # NOME DO PROJETO
 
-Cantina escolar
+Sistema de Gerenciamento e Organização da Cantina 
 
 # JUSTIFICATIVA
 
-A ideia do projeto é desenvolver um software que organize a cantina de uma escola, além da organização, esse projeto busca também a facilidade e rapidez nos pedidos, 
-evitando filas demoradas entre outros.
+A ideia do projeto é desenvolver um software que gerencie e organize a cantina. 
+Observamos que a cantina tem problemas em relação a organização, devido a alta demanda, o que acaba acarretando em problemas com pagamentos, filas demoradas, 
+falta de produto, dentre outros problemas. Por esses motivos, decidimos desenvoler este software para organização e gerenciamento.
 
 # DESCRICÃO DO PRODUTO
 
