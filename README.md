@@ -36,3 +36,8 @@ Mais informações na documentação.
 | [<img src="https://avatars.githubusercontent.com/u/89814011?v=4" width=115><br><sub>Gustavo de Jesus de Oliveira</sub>](https://github.com/Gusstavolo) |  [<img src="https://avatars.githubusercontent.com/u/88636005?v=4" width=115><br><sub>Anderson Soares de Santana Junior</sub>](https://github.com/Anderson-Soaress) |  [<img src="https://avatars.githubusercontent.com/u/102067918?v=4" width=115><br><sub>João Pedro Pedro de Souza Barros</sub>](https://github.com/joaopedro85) |
 | :---: | :---: | :---: |
 
+# FUNCIONALIDADES
+
+- Anderson Soares - Líder
+- João Pedro - Desenvolvedor e Organizador
+- Gustavo de Jesus - Desenvolvedor 
