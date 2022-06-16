@@ -2,8 +2,8 @@
 
 # ATA DA REUNIÃO
 
-Data - 19/05/2022
-Local - Cantina do IFBA EUC
+- Data - 19/05/2022
+- Local - Cantina do IFBA EUC
 
 # PARTICIPANTES
 
