@@ -1,48 +1,104 @@
+import java.util.Scanner;
+
 public class Cliente {
-    private int cpf;
-    private String nome;
-    private String fone;
-    private String pedido;
-    private int cod;
 
-    public int getCpf() {
-        return cpf;
+    // ATRIBUTOS
+
+    private String tipoCliente;
+    private String nomeCliente;
+    private int cpfCliente;
+    private int foneCliente;
+    private String pedidoCliente;
+    private int codigoCliente;
+    public boolean cadastrado;
+
+
+    // METODOS
+
+    public void fazerPedido(){
+
+    }
+    public void mostrarCliente(){
+        if (this.isCadastrado()) {
+            System.out.println("-----------------------------------------");
+            System.out.println("Cliente: " + getNomeCliente());
+            System.out.println(getTipoCliente());
+            System.out.println("CPF: " + getCpfCliente());
+            System.out.println("Telefone: " + getFoneCliente());
+        } else {
+            System.out.println("Não há dados desse cliente.");
+        }
+    }
+    public void cadastrarCliente(){
+        Scanner input = new Scanner(System.in);
+        System.out.println("-----------------------------------------");
+        System.out.println("Digite o nome do cliente: ");
+        this.setNomeCliente(input.nextLine());
+        System.out.println("Digite se o cliente é Aluno ou Servidor: ");
+        this.setTipoCliente(input.nextLine());
+        System.out.println("Digite o CPF: ");
+        this.setCpfCliente(input.nextInt());
+        System.out.println("Digite o número do cliente: ");
+        this.setFoneCliente(input.nextInt());
+        this.setCadastrado(true);
+
     }
 
-    public void setCpf(int cpf) {
-        this.cpf = cpf;
+    // METODOS ESPECIAIS
+
+    public String getTipoCliente() {
+        return tipoCliente;
     }
 
-    public String getNome() {
-        return nome;
+    public void setTipoCliente(String tipoCliente) {
+        this.tipoCliente = tipoCliente;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public String getNomeCliente() {
+        return nomeCliente;
     }
 
-    public String getFone() {
-        return fone;
+    public void setNomeCliente(String nomeCliente) {
+        this.nomeCliente = nomeCliente;
     }
 
-    public void setFone(String fone) {
-        this.fone = fone;
+    public int getCpfCliente() {
+        return cpfCliente;
     }
 
-    public String cc(){
-        System.out.println("NOME CLIENTE: ");
-
-        return nome;
-    }
-    public String pp(){
-        System.out.println("PEDIDO: ");
-
-        return pedido;
+    public void setCpfCliente(int cpfCliente) {
+        this.cpfCliente = cpfCliente;
     }
 
-    public int codig(){
-        System.out.println("CODIGO DO PEDIDO: ");
-        return cod;
+    public int getFoneCliente() {
+        return foneCliente;
     }
 
+    public void setFoneCliente(int foneCliente) {
+        this.foneCliente = foneCliente;
+    }
+
+    public String getPedidoCliente() {
+        return pedidoCliente;
+    }
+
+    public void setPedidoCliente(String pedidoCliente) {
+        this.pedidoCliente = pedidoCliente;
+    }
+
+    public int getCodigoCliente() {
+        return codigoCliente;
+    }
+
+    public void setCodigoCliente(int codigoCliente) {
+        this.codigoCliente = codigoCliente;
+    }
+
+    public boolean isCadastrado() {
+        return cadastrado;
+    }
+
+    public void setCadastrado(boolean cadastrado) {
+        this.cadastrado = cadastrado;
+    }
 }
