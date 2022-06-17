@@ -4,15 +4,20 @@ import java.util.Scanner;
 public class CantinaMain {
     public static void main(String[] args) {
 
+        // CHAMA METODO DE CADASTRO DE CLIENTE
+        
         Cliente cliente1 = new Cliente();
         System.out.println("   CADASTRE O CLIENTE   ");
         cliente1.cadastrarCliente();
+        
+        // CHAMA METODO DE CADASTRO DE CONTA
 
         ContaBanco conta1 = new ContaBanco();
         conta1.cadastrarConta(cliente1);
 
+        // MENU COM ALGUMAS ACOES
+        
         int escolhaMenu = 0;
-
 
         while (escolhaMenu != 4){
             System.out.println("------------------------------");
@@ -41,7 +46,7 @@ public class CantinaMain {
                         System.out.println("2- PAGAR");
                         System.out.println("3- SAIR");
                         escolhaAcao = input.nextInt();
-
+                        
                         switch (escolhaAcao) {
                             case 1:
                                 System.out.println("Valor do deposito: ");
