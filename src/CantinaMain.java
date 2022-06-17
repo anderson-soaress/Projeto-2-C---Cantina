@@ -1,59 +1,65 @@
-import jdk.swing.interop.SwingInterOpUtils;
-
-import java.util.Random;
 
 import java.util.Scanner;
 
 public class CantinaMain {
     public static void main(String[] args) {
 
-        //registra input
-        Scanner input = new Scanner(System.in);
+        Cliente cliente1 = new Cliente();
+        System.out.println("   CADASTRE O CLIENTE   ");
+        cliente1.cadastrarCliente();
+
+        ContaBanco conta1 = new ContaBanco();
+        conta1.cadastrarConta(cliente1);
+
+        int escolhaMenu = 0;
 
 
-        //gera um codigo aleatorio, de 0 ate 200,
-        Random rand = new Random();
-        int limit = 200;
-        int escolhaMenu = 1;
+        while (escolhaMenu != 4){
+            System.out.println("------------------------------");
+            System.out.println("   ESCOLHA   ");
+            System.out.println("1- MOSTRAR DADOS DO CLIENTE");
+            System.out.println("2- MOSTRAR DADOS DA CONTA");
+            System.out.println("3- ACOES");
+            System.out.println("4- SAIR");
 
-
-        while (escolhaMenu == 1) {
-            // CHAMA O MENU E LÊ O NUMERO DIGITADO
-            MenuS mn = new MenuS();
-            mn.menuu();
-
+            Scanner input = new Scanner(System.in);
             escolhaMenu = input.nextInt();
 
-            switch (escolhaMenu) {
-
-                // CRIA NOVA LISTA
-
+            switch (escolhaMenu){
                 case 1:
-                    Cliente cliente1 = new Cliente();
-                    cliente1.cadastrarCliente();
                     cliente1.mostrarCliente();
                     break;
-
-                // ACESSAR LISTAS
-
                 case 2:
-                    System.out.println("");
-
+                    conta1.mostrarConta();
                     break;
-
-                // ENCERRAR
-
                 case 3:
-                    System.out.close();
+                    int escolhaAcao = 0;
+                    while (escolhaAcao != 3) {
+                        System.out.println("-------------------");
+                        System.out.println("   ESCOLHA    ");
+                        System.out.println("1- DEPOSITAR");
+                        System.out.println("2- PAGAR");
+                        System.out.println("3- SAIR");
+                        escolhaAcao = input.nextInt();
 
-                    // Se o número escolhido nao for 1,2 ou 3
-                default:
-                    System.out.println("");
-                    System.out.println("POR FAVOR ESCOLHA UMA DESSAS OPÇÕES");
-                    System.out.println("");
-                    escolhaMenu = 1;
+                        switch (escolhaAcao) {
+                            case 1:
+                                System.out.println("Valor do deposito: ");
+                                conta1.depositar(input.nextFloat());
+                                break;
+                            case 2:
+                                System.out.println("Valor a ser pago: ");
+                                conta1.pagar(input.nextFloat());
+                                break;
+                            case 3:
+                                escolhaAcao = 3;
+                                break;
+                        }
+                    }
+                case 4:
+                    System.out.println("SAINDO...");
+
             }
         }
     }
 }
-
