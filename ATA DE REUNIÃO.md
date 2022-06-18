@@ -30,6 +30,9 @@
 
 ### AÇÕES A SEREM TOMADAS
 
-- Criação de menu principal - Gustavo de Jesus
-- Cadastro de clientes - Anderson Soares
-- Realizar e salvar pedido com um código único - João Pedro
+| Ação | Responsável |
+|----|-----------|
+| Criação de menu principal | Gustavo de Jesus |
+| Cadastro e visualização de clientes | Anderson Soares |
+| Cadastro e visualização de conta para deposito e pagamento | Anderson Soares |
+| Realização de pedidos | João Pedro |
