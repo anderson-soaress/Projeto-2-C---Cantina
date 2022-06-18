@@ -2,28 +2,43 @@
 
 # Retrospectiva 1
 
+| Inicio | Término |
+|--------|---------|
+|16/05/2022|10/06/2022|
+
 ### O que estava planejado
 
-- Página inicial (readme) - Anderson Soares
-- Reunião com Cliente - João Pedro
-- Documentação do Projeto - Gustavo de Jesus
-- 40% do produto - Todos os membros
-- Issues alimentados - Todos os membros
+| Atividade | Atribuição |
+|-----------|------------|
+| Página inicial (readme) | Anderson Soares |
+| Reunião com Cliente | João Pedro |
+| Documentação do projeto | Gustavo de Jesus |
+| 40% do produto | Todos |
+| Issus alimentados | Todos |
+
 
 ### O que foi feito 
 
-- Página inicial (readme) - Anderson Soares
-- Reunião com Cliente - João Pedro
-- Documentação do Projeto - Gustavo de Jesus
-- Uma parte do produto - Gustavo de Jesus
+| Atividade | Atribuição |
+|-----------|------------|
+| Página inicial (readme) | Anderson Soares |
+| Reunião com Cliente | João Pedro |
+| Documentação do projeto | Gustavo de Jesus |
+| Parte do produto | Gustavo de Jesus |
 
 ### O que não foi feito
 
 - 40% do produto (Motivo: 2 membros do grupo tiveram problemas com seus respectivos equipamentos, porém já resolvido)
 - Issus alimentados (Motivo: Mesmo problema acima)
 
+### Planejado para a próxima iteração
+
+- Repósitorio atualizado
+- 70% do produto
+
 ### Lições aprendidas
 
 - Ter mais foco no nosso projeto
 - Maior cooperação
 - Atenção a prazos
+- E novamente foco!!!
