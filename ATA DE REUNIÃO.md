@@ -1,11 +1,13 @@
 # SISTEMA DE GERENCIAMENTO E ORGANIZAÇÃO DA CANTINA
 
-# ATA DA REUNIÃO
+## ATA DA REUNIÃO
 
-    Data    |         Local
-------------|-----------------------
- 19/05/2022 | Cantina do campus EUC
- 
+| Data | Local |
+|------|-------|
+|19/05/2022|Cantina do Campus EUC|
+
+
+
 ### PARTICIPANTES
 
 - João Pedro de Souza Barros
