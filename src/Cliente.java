@@ -1,18 +1,13 @@
 import java.util.Random;
 import java.util.Scanner;
 
-public class Cliente {
+public class Cliente extends Pessoa{
 
     // ATRIBUTOS
 
     private String tipoCliente;
-    private String nomeCliente;
-    private int cpfCliente;
-    private int foneCliente;
     private String pedidoCliente;
     private int codigoCliente;
-    public boolean cadastrado;
-
 
     // METODOS
 
@@ -23,10 +18,10 @@ public class Cliente {
         if (this.isCadastrado()) {
             System.out.println("-----------------------------------------");
             System.out.println("    Dados do cliente    ");
-            System.out.println("Cliente: " + getNomeCliente());
+            System.out.println("Cliente: " + getNome());
             System.out.println(getTipoCliente());
-            System.out.println("CPF: " + getCpfCliente());
-            System.out.println("Telefone: " + getFoneCliente());
+            System.out.println("CPF: " + getCpf());
+            System.out.println("Telefone: " + getTelefone());
             System.out.println("Codigo do cliente: " + getCodigoCliente());
         } else {
             System.out.println("Não há dados desse cliente.");
@@ -37,16 +32,16 @@ public class Cliente {
 
         System.out.println("-----------------------------------------");
         System.out.println("Digite o nome do cliente: ");
-        this.setNomeCliente(input.nextLine());
+        this.setNome(input.nextLine());
 
         System.out.println("Digite se o cliente é Aluno ou Servidor: ");
         this.setTipoCliente(input.nextLine());
 
-        System.out.println("Digite o CPF: ");
-        this.setCpfCliente(input.nextInt());
+        System.out.println("Digite o CPF do cliente: ");
+        this.setCpf(input.nextInt());
 
         System.out.println("Digite o número do cliente: ");
-        this.setFoneCliente(input.nextInt());
+        this.setTelefone(input.nextInt());
 
         Random cod = new Random();
         this.setCodigoCliente(cod.nextInt(200));
@@ -66,30 +61,6 @@ public class Cliente {
         this.tipoCliente = tipoCliente;
     }
 
-    public String getNomeCliente() {
-        return nomeCliente;
-    }
-
-    public void setNomeCliente(String nomeCliente) {
-        this.nomeCliente = nomeCliente;
-    }
-
-    public int getCpfCliente() {
-        return cpfCliente;
-    }
-
-    public void setCpfCliente(int cpfCliente) {
-        this.cpfCliente = cpfCliente;
-    }
-
-    public int getFoneCliente() {
-        return foneCliente;
-    }
-
-    public void setFoneCliente(int foneCliente) {
-        this.foneCliente = foneCliente;
-    }
-
     public String getPedidoCliente() {
         return pedidoCliente;
     }
@@ -106,11 +77,4 @@ public class Cliente {
         this.codigoCliente = codigoCliente;
     }
 
-    public boolean isCadastrado() {
-        return cadastrado;
-    }
-
-    public void setCadastrado(boolean cadastrado) {
-        this.cadastrado = cadastrado;
-    }
 }
