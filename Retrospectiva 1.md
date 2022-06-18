@@ -41,4 +41,4 @@
 - Ter mais foco no nosso projeto
 - Maior cooperação
 - Atenção a prazos
-- E novamente foco!!!
+- E novamente, foco!!!
