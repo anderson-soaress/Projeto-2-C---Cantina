@@ -5,17 +5,19 @@
 - Data - 19/05/2022
 - Local - Cantina do IFBA EUC
 
-# PARTICIPANTES
+### PARTICIPANTES
 
 - João Pedro de Souza Barros
+- Anderson Soares de Santana Junior
+- Gustavo de Jesus Oliveira
 
-# OBJETIVOS
+### OBJETIVOS
 
 - Coletar informações sobre a cantina
 - Coletar informações sobre a venda de produtos
 - Sugerir melhorias
 
-# TÓPICOS DISCUTIDOS
+### TÓPICOS DISCUTIDOS
 
 - Descrição de produtos 
 - Quantidade de vendas
@@ -23,8 +25,8 @@
 - Público-alvo
 - Formas de pagamentos
 
-# AÇÕES A SEREM TOMADAS
+### AÇÕES A SEREM TOMADAS
 
 - Criação de menu principal - Gustavo de Jesus
-- Cadastro de clientes - Gustavo de Jesus
+- Cadastro de clientes - Anderson Soares
 - Realizar e salvar pedido com um código único - João Pedro
