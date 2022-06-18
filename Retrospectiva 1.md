@@ -14,7 +14,7 @@
 | Reunião com Cliente | João Pedro |
 | Documentação do projeto | Gustavo de Jesus |
 | 40% do produto | Todos |
-| Issus alimentados | Todos |
+| Repositório sempre atualizado | Todos |
 
 
 ### O que foi feito 
@@ -29,7 +29,7 @@
 ### O que não foi feito
 
 - 40% do produto (Motivo: 2 membros do grupo tiveram problemas com seus respectivos equipamentos, porém já resolvido)
-- Issus alimentados (Motivo: Mesmo problema acima)
+- Repósitorio sempre atualizado (Motivo: Mesmo problema acima)
 
 ### Planejado para a próxima iteração
 
