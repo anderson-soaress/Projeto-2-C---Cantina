@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class Cliente {
@@ -21,25 +22,36 @@ public class Cliente {
     public void mostrarCliente(){
         if (this.isCadastrado()) {
             System.out.println("-----------------------------------------");
+            System.out.println("    Dados do cliente    ");
             System.out.println("Cliente: " + getNomeCliente());
             System.out.println(getTipoCliente());
             System.out.println("CPF: " + getCpfCliente());
             System.out.println("Telefone: " + getFoneCliente());
+            System.out.println("Codigo do cliente: " + getCodigoCliente());
         } else {
             System.out.println("Não há dados desse cliente.");
         }
     }
     public void cadastrarCliente(){
         Scanner input = new Scanner(System.in);
+
         System.out.println("-----------------------------------------");
         System.out.println("Digite o nome do cliente: ");
         this.setNomeCliente(input.nextLine());
+
         System.out.println("Digite se o cliente é Aluno ou Servidor: ");
         this.setTipoCliente(input.nextLine());
+
         System.out.println("Digite o CPF: ");
         this.setCpfCliente(input.nextInt());
+
         System.out.println("Digite o número do cliente: ");
         this.setFoneCliente(input.nextInt());
+
+        Random cod = new Random();
+        this.setCodigoCliente(cod.nextInt(200));
+        System.out.println("Codigo gerado: " + getCodigoCliente());
+
         this.setCadastrado(true);
 
     }
