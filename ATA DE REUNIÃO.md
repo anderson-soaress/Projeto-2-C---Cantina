@@ -2,9 +2,10 @@
 
 # ATA DA REUNIÃO
 
-- Data - 19/05/2022
-- Local - Cantina do IFBA EUC
-
+    Data    |         Local
+------------|-----------------------
+ 19/05/2022 | Cantina do campus EUC
+ 
 ### PARTICIPANTES
 
 - João Pedro de Souza Barros
