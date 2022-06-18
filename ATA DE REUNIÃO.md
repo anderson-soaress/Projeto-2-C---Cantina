@@ -8,19 +8,19 @@
 
 
 
-### PARTICIPANTES
+### Participantes
 
 - João Pedro de Souza Barros
 - Anderson Soares de Santana Junior
 - Gustavo de Jesus Oliveira
 
-### OBJETIVOS
+### Objetivos
 
 - Coletar informações sobre a cantina
 - Coletar informações sobre a venda de produtos
 - Sugerir melhorias
 
-### TÓPICOS DISCUTIDOS
+### Tópicos discutidos
 
 - Descrição de produtos 
 - Quantidade de vendas
@@ -28,7 +28,7 @@
 - Público-alvo
 - Formas de pagamentos
 
-### AÇÕES A SEREM TOMADAS
+### Ações a serem tomadas
 
 | Ação | Responsável |
 |----|-----------|
