@@ -11,23 +11,8 @@ public class Cliente extends Pessoa{
 
     // METODOS
 
-    public void fazerPedido(){
-
-    }
-    public void mostrarCliente(){
-        if (this.isCadastrado()) {
-            System.out.println("-----------------------------------------");
-            System.out.println("    Dados do cliente    ");
-            System.out.println("Cliente: " + getNome());
-            System.out.println(getTipoCliente());
-            System.out.println("CPF: " + getCpf());
-            System.out.println("Telefone: " + getTelefone());
-            System.out.println("Codigo do cliente: " + getCodigoCliente());
-        } else {
-            System.out.println("Não há dados desse cliente.");
-        }
-    }
-    public void cadastrarCliente(){
+    @Override
+    public void cadastrar() {
         Scanner input = new Scanner(System.in);
 
         System.out.println("-----------------------------------------");
@@ -48,6 +33,24 @@ public class Cliente extends Pessoa{
         System.out.println("Codigo gerado: " + getCodigoCliente());
 
         this.setCadastrado(true);
+    }
+
+    @Override
+    public void dados() {
+        if (this.isCadastrado()) {
+            System.out.println("-----------------------------------------");
+            System.out.println("    Dados do cliente    ");
+            System.out.println("Cliente: " + getNome());
+            System.out.println(getTipoCliente());
+            System.out.println("CPF: " + getCpf());
+            System.out.println("Telefone: " + getTelefone());
+            System.out.println("Codigo do cliente: " + getCodigoCliente());
+        } else {
+            System.out.println("Não há dados desse cliente.");
+        }
+    }
+
+    public void fazerPedido(){
 
     }
 
@@ -76,5 +79,6 @@ public class Cliente extends Pessoa{
     public void setCodigoCliente(int codigoCliente) {
         this.codigoCliente = codigoCliente;
     }
+
 
 }
