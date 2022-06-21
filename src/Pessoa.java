@@ -2,12 +2,15 @@ public abstract class Pessoa {
 
     // ATRIBUTOS
 
-    private String nome;
-    private int cpf;
-    private int telefone;
-    public boolean cadastrado;
+    protected String nome;
+    protected int cpf;
+    protected int telefone;
+    protected boolean cadastrado;
 
     // METODOS
+
+    public abstract void cadastrar();
+    public abstract void dados();
 
     // METODOS ESPECIAIS
 
