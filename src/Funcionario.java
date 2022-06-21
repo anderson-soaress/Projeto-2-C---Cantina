@@ -8,21 +8,8 @@ public class Funcionario extends Pessoa{
 
     // METODOS
 
-    public void mostrarFuncionario(){
-        if (this.isCadastrado()) {
-            System.out.println("-----------------------------------------");
-            System.out.println("    Dados do funcionario    ");
-            System.out.println("Funcionario: " + getNome());
-            System.out.println(getEspecialidade());
-            System.out.println("CPF: " + getCpf());
-            System.out.println("Telefone: " + getTelefone());
-        } else {
-            System.out.println("Não há dados desse funcionario.");
-        }
-
-    }
-
-    public void cadastrarFuncionario(){
+    @Override
+    public void cadastrar() {
         Scanner input = new Scanner(System.in);
 
         System.out.println("-----------------------------------------");
@@ -41,6 +28,20 @@ public class Funcionario extends Pessoa{
         this.setCadastrado(true);
     }
 
+    @Override
+    public void dados() {
+        if (this.isCadastrado()) {
+            System.out.println("-----------------------------------------");
+            System.out.println("    Dados do funcionario    ");
+            System.out.println("Funcionario: " + getNome());
+            System.out.println(getEspecialidade());
+            System.out.println("CPF: " + getCpf());
+            System.out.println("Telefone: " + getTelefone());
+        } else {
+            System.out.println("Não há dados desse funcionario.");
+        }
+    }
+
     // METODOS ESPECIAIS
 
     public String getEspecialidade() {
@@ -50,4 +51,5 @@ public class Funcionario extends Pessoa{
     public void setEspecialidade(String especialidade) {
         this.especialidade = especialidade;
     }
+
 }
