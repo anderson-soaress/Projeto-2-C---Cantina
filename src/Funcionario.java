@@ -9,7 +9,12 @@ public class Funcionario extends Pessoa{
     // METODOS
 
     @Override
-    public void cadastrar() {
+    public void manipular() {
+
+    }
+
+    @Override
+    public void coletar() {
         Scanner input = new Scanner(System.in);
 
         System.out.println("-----------------------------------------");
@@ -20,12 +25,17 @@ public class Funcionario extends Pessoa{
         this.setEspecialidade(input.nextLine());
 
         System.out.println("Digite o CPF do funcionario: ");
-        this.setCpf(input.nextInt());
+        this.setCpf(input.nextLine());
 
         System.out.println("Digite o número do funcionario: ");
         this.setTelefone(input.nextInt());
 
         this.setCadastrado(true);
+    }
+
+    @Override
+    public void cadastrar() {
+
     }
 
     @Override
