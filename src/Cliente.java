@@ -1,3 +1,4 @@
+import java.util.HashMap;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -9,11 +10,29 @@ public class Cliente extends Pessoa{
     private String pedidoCliente;
     private int codigoCliente;
 
+    // OBJETOS
+    Scanner input = new Scanner(System.in);
+    HashMap<String,Cliente> clientes = new HashMap<String,Cliente>();
+
+
     // METODOS
 
     @Override
-    public void cadastrar() {
-        Scanner input = new Scanner(System.in);
+    public void manipular() {
+        System.out.println("------DADOS------");
+        System.out.println("1- MOSTRAR");
+
+        System.out.println("DIGITE O CPF: ");
+        this.setCpfConsulta(input.nextLine());
+        if (clientes.get(getCpfConsulta()) != null){
+            clientes.get(getCpfConsulta()).dados();
+        } else {
+            System.out.println("CPF NÃO CADASTRADO.");
+        }
+    }
+
+    @Override
+    public void coletar() {
 
         System.out.println("-----------------------------------------");
         System.out.println("Digite o nome do cliente: ");
@@ -23,7 +42,7 @@ public class Cliente extends Pessoa{
         this.setTipoCliente(input.nextLine());
 
         System.out.println("Digite o CPF do cliente: ");
-        this.setCpf(input.nextInt());
+        this.setCpf(input.nextLine());
 
         System.out.println("Digite o número do cliente: ");
         this.setTelefone(input.nextInt());
@@ -33,6 +52,20 @@ public class Cliente extends Pessoa{
         System.out.println("Codigo gerado: " + getCodigoCliente());
 
         this.setCadastrado(true);
+
+    }
+
+    @Override
+    public void cadastrar() {
+        Cliente cliente = new Cliente();
+        cliente.coletar();
+
+        if (clientes.containsKey(getCpf())){
+                System.out.println("Este cpf já foi informado.");
+        } else {
+            clientes.put(cliente.getCpf(),cliente);
+            System.out.println("Cadastrado com sucesso!");
+        }
     }
 
     @Override
@@ -55,7 +88,6 @@ public class Cliente extends Pessoa{
     }
 
     // METODOS ESPECIAIS
-
     public String getTipoCliente() {
         return tipoCliente;
     }
@@ -79,6 +111,4 @@ public class Cliente extends Pessoa{
     public void setCodigoCliente(int codigoCliente) {
         this.codigoCliente = codigoCliente;
     }
-
-
 }
