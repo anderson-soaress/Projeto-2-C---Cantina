@@ -2,13 +2,16 @@ public abstract class Pessoa {
 
     // ATRIBUTOS
 
+    protected String cpfConsulta;
     protected String nome;
-    protected int cpf;
+    protected String cpf;
     protected int telefone;
     protected boolean cadastrado;
 
     // METODOS
 
+    public abstract void manipular();
+    public abstract void coletar();
     public abstract void cadastrar();
     public abstract void dados();
 
@@ -22,11 +25,11 @@ public abstract class Pessoa {
         this.nome = nome;
     }
 
-    public int getCpf() {
+    public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(int cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
@@ -44,5 +47,13 @@ public abstract class Pessoa {
 
     public void setCadastrado(boolean cadastrado) {
         this.cadastrado = cadastrado;
+    }
+
+    public String getCpfConsulta() {
+        return cpfConsulta;
+    }
+
+    public void setCpfConsulta(String cpfConsulta) {
+        this.cpfConsulta = cpfConsulta;
     }
 }
