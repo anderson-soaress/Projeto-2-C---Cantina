@@ -1,65 +1,35 @@
 
+import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 public class CantinaMain {
     public static void main(String[] args) {
 
-        Cliente cliente1 = new Cliente();
-        System.out.println("   CADASTRE O CLIENTE   ");
-        cliente1.cadastrar();
-
-        ContaBanco conta1 = new ContaBanco();
-        conta1.cadastrarConta(cliente1);
 
         int escolhaMenu = 0;
+        Scanner input = new Scanner(System.in);
+        Cliente menu = new Cliente();
 
+        do {
+            System.out.println("------MENU------");
+            System.out.println("1 - CADASTRAR");
+            System.out.println("2 - DADOS");
+            System.out.println("3 - SAIR");
+            System.out.println("----------------");
 
-        while (escolhaMenu != 4){
-            System.out.println("------------------------------");
-            System.out.println("   ESCOLHA   ");
-            System.out.println("1- MOSTRAR DADOS DO CLIENTE");
-            System.out.println("2- MOSTRAR DADOS DA CONTA");
-            System.out.println("3- ACOES");
-            System.out.println("4- SAIR");
-
-            Scanner input = new Scanner(System.in);
             escolhaMenu = input.nextInt();
-
-            switch (escolhaMenu){
-                case 1:
-                    cliente1.dados();
-                    break;
-                case 2:
-                    conta1.mostrarConta();
-                    break;
-                case 3:
-                    int escolhaAcao = 0;
-                    while (escolhaAcao != 3) {
-                        System.out.println("-------------------");
-                        System.out.println("   ESCOLHA    ");
-                        System.out.println("1- DEPOSITAR");
-                        System.out.println("2- PAGAR");
-                        System.out.println("3- SAIR");
-                        escolhaAcao = input.nextInt();
-
-                        switch (escolhaAcao) {
-                            case 1:
-                                System.out.println("Valor do deposito: ");
-                                conta1.depositar(input.nextFloat());
-                                break;
-                            case 2:
-                                System.out.println("Valor a ser pago: ");
-                                conta1.pagar(input.nextFloat());
-                                break;
-                            case 3:
-                                escolhaAcao = 3;
-                                break;
-                        }
-                    }
-                case 4:
-                    System.out.println("SAINDO...");
-
-            }
+        switch (escolhaMenu) {
+            case 1:
+                menu.cadastrar();
+                break;
+            case 2:
+                menu.manipular();
+                break;
+            case 3:
+                System.out.println("Saindo...");
+                break;
         }
+        } while (escolhaMenu != 3);
     }
 }
