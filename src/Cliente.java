@@ -1,3 +1,5 @@
+import jdk.swing.interop.SwingInterOpUtils;
+
 import java.util.HashMap;
 import java.util.Random;
 import java.util.Scanner;
@@ -9,6 +11,7 @@ public class Cliente extends Pessoa{
     private String tipoCliente;
     private String pedidoCliente;
     private int codigoCliente;
+    String escolhaMenu = "0";
 
     // OBJETOS
     Scanner input = new Scanner(System.in);
@@ -18,17 +21,86 @@ public class Cliente extends Pessoa{
     // METODOS
 
     @Override
-    public void manipular() {
-        System.out.println("------DADOS------");
-        System.out.println("1- MOSTRAR");
+    public void alterar(){
+        do {
+            System.out.println("-----ALTERAR-----");
+            System.out.println("1 - NOME");
+            System.out.println("2 - CPF");
+            System.out.println("3 - TELEFONE");
+            System.out.println("4 - SAIR");
 
-        System.out.println("DIGITE O CPF: ");
-        this.setCpfConsulta(input.nextLine());
-        if (clientes.get(getCpfConsulta()) != null){
-            clientes.get(getCpfConsulta()).dados();
-        } else {
-            System.out.println("CPF NÃO CADASTRADO.");
-        }
+            escolhaMenu = input.nextLine();
+
+            switch (escolhaMenu){
+                case "1":
+                    System.out.println("NOME ATUAL: " + this.getNome());
+                    System.out.println("DIGITE O NOVO NOME: ");
+                    this.setNome(input.nextLine());
+                    break;
+                case "2":
+                    System.out.println("CPF ATUAL: " + this.getCpf());
+                    System.out.println("DIGITE O NOVO CPF: ");
+                    this.setCpf(input.nextLine());
+                    break;
+                case "3":
+                    System.out.println("TELEFONE ATUAL: " + this.getTelefone());
+                    System.out.println("DIGITE O NOVO TELEFONE: ");
+                    this.setTelefone(input.nextInt());
+                    break;
+                case "4":
+                    System.out.println("SAINDO...");
+                    break;
+            }
+        } while (!escolhaMenu.equals("4"));
+    }
+    @Override
+    public void manipular() {
+
+        do {
+            System.out.println("------DADOS------");
+            System.out.println("1 - MOSTRAR");
+            System.out.println("2 - ALTERAR");
+            System.out.println("3 - EXCLUIR");
+            System.out.println("4 - SAIR");
+
+            escolhaMenu = input.nextLine();
+
+            if (!escolhaMenu.equals("4")) {
+                System.out.println("--------------");
+                System.out.println("DIGITE O CPF: ");
+                this.setCpfConsulta(input.nextLine());
+
+                if (clientes.get(getCpfConsulta()) != null) {
+                    switch (escolhaMenu) {
+                        case "1":
+                            clientes.get(getCpfConsulta()).dados();
+                            break;
+                        case "2":
+                            clientes.get(getCpfConsulta()).alterar();
+                            break;
+                        case "3":
+                            System.out.println("VOCÊ TEM CERTEZA QUE QUER REMOVER CPF: "+ this.getCpfConsulta()+"?");
+                            System.out.println("1 - SIM");
+                            System.out.println("2 - NÃO");
+                            String escolhaCerteza = "0";
+                            escolhaCerteza = input.nextLine();
+
+                            if (escolhaCerteza.equals("1")){
+                                clientes.remove(getCpfConsulta());
+                                System.out.println("REMOVIDO COM SUCESSO.");
+                            } else{
+                                System.out.println("SAINDO...");
+                            }
+                            break;
+                        case "4":
+                            System.out.println("SAINDO...");
+                    }
+                } else {
+                    System.out.println("CPF NÃO CADASTRADO");
+                    System.out.println("TENTE NOVAMENTE.");
+                }
+            }
+        } while (!escolhaMenu.equals("4"));
     }
 
     @Override
