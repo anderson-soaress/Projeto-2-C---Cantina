@@ -10,6 +10,7 @@ public abstract class Pessoa {
 
     // METODOS
 
+    public abstract void alterar();
     public abstract void manipular();
     public abstract void coletar();
     public abstract void cadastrar();
