@@ -9,6 +9,11 @@ public class Funcionario extends Pessoa{
     // METODOS
 
     @Override
+    public void alterar() {
+        
+    }
+
+    @Override
     public void manipular() {
 
     }
