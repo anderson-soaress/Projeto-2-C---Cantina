@@ -1,112 +1,29 @@
-import jdk.swing.interop.SwingInterOpUtils;
 
 import java.util.HashMap;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Cliente extends Pessoa{
+public class Cliente extends Pessoa {
 
     // ATRIBUTOS
 
+    private float saldo;
     private String tipoCliente;
     private String pedidoCliente;
     private int codigoCliente;
-    String escolhaMenu = "0";
 
     // OBJETOS
     Scanner input = new Scanner(System.in);
-    HashMap<String,Cliente> clientes = new HashMap<String,Cliente>();
-
+    HashMap<String, Cliente> clientes = new HashMap<String, Cliente>();
+    String espera = "1";
 
     // METODOS
 
     @Override
-    public void alterar(){
-        do {
-            System.out.println("-----ALTERAR-----");
-            System.out.println("1 - NOME");
-            System.out.println("2 - CPF");
-            System.out.println("3 - TELEFONE");
-            System.out.println("4 - SAIR");
-
-            escolhaMenu = input.nextLine();
-
-            switch (escolhaMenu){
-                case "1":
-                    System.out.println("NOME ATUAL: " + this.getNome());
-                    System.out.println("DIGITE O NOVO NOME: ");
-                    this.setNome(input.nextLine());
-                    break;
-                case "2":
-                    System.out.println("CPF ATUAL: " + this.getCpf());
-                    System.out.println("DIGITE O NOVO CPF: ");
-                    this.setCpf(input.nextLine());
-                    break;
-                case "3":
-                    System.out.println("TELEFONE ATUAL: " + this.getTelefone());
-                    System.out.println("DIGITE O NOVO TELEFONE: ");
-                    this.setTelefone(input.nextInt());
-                    break;
-                case "4":
-                    System.out.println("SAINDO...");
-                    break;
-            }
-        } while (!escolhaMenu.equals("4"));
-    }
-    @Override
-    public void manipular() {
-
-        do {
-            System.out.println("------DADOS------");
-            System.out.println("1 - MOSTRAR");
-            System.out.println("2 - ALTERAR");
-            System.out.println("3 - EXCLUIR");
-            System.out.println("4 - SAIR");
-
-            escolhaMenu = input.nextLine();
-
-            if (!escolhaMenu.equals("4")) {
-                System.out.println("--------------");
-                System.out.println("DIGITE O CPF: ");
-                this.setCpfConsulta(input.nextLine());
-
-                if (clientes.get(getCpfConsulta()) != null) {
-                    switch (escolhaMenu) {
-                        case "1":
-                            clientes.get(getCpfConsulta()).dados();
-                            break;
-                        case "2":
-                            clientes.get(getCpfConsulta()).alterar();
-                            break;
-                        case "3":
-                            System.out.println("VOCÊ TEM CERTEZA QUE QUER REMOVER CPF: "+ this.getCpfConsulta()+"?");
-                            System.out.println("1 - SIM");
-                            System.out.println("2 - NÃO");
-                            String escolhaCerteza = "0";
-                            escolhaCerteza = input.nextLine();
-
-                            if (escolhaCerteza.equals("1")){
-                                clientes.remove(getCpfConsulta());
-                                System.out.println("REMOVIDO COM SUCESSO.");
-                            } else{
-                                System.out.println("SAINDO...");
-                            }
-                            break;
-                        case "4":
-                            System.out.println("SAINDO...");
-                    }
-                } else {
-                    System.out.println("CPF NÃO CADASTRADO");
-                    System.out.println("TENTE NOVAMENTE.");
-                }
-            }
-        } while (!escolhaMenu.equals("4"));
-    }
-
-    @Override
     public void coletar() {
 
-        System.out.println("-----------------------------------------");
+        Interface.limpatela();
+        System.out.println("---------CADASTRO---------");
         System.out.println("Digite o nome do cliente: ");
         this.setNome(input.nextLine());
 
@@ -128,59 +45,192 @@ public class Cliente extends Pessoa{
     }
 
     @Override
-    public void cadastrar() {
-        Cliente cliente = new Cliente();
-        cliente.coletar();
-
-        if (clientes.containsKey(getCpf())){
-                System.out.println("Este cpf já foi informado.");
-        } else {
-            clientes.put(cliente.getCpf(),cliente);
-            System.out.println("Cadastrado com sucesso!");
-        }
-    }
-
-    @Override
     public void dados() {
         if (this.isCadastrado()) {
-            System.out.println("-----------------------------------------");
-            System.out.println("    Dados do cliente    ");
+            Interface.limpatela();
+            System.out.println("-----Dados do cliente-----");
             System.out.println("Cliente: " + getNome());
             System.out.println(getTipoCliente());
             System.out.println("CPF: " + getCpf());
             System.out.println("Telefone: " + getTelefone());
             System.out.println("Codigo do cliente: " + getCodigoCliente());
+            esperar();
         } else {
             System.out.println("Não há dados desse cliente.");
+            esperar();
         }
     }
 
-    public void fazerPedido(){
+    @Override
+    public void cadastrar() {
+        Cliente cliente = new Cliente();
+        cliente.coletar();
 
+        if (clientes.containsKey(getCpf())) {
+            System.out.println("Este cpf já foi informado.");
+            esperar();
+        } else {
+            clientes.put(cliente.getCpf(), cliente);
+            System.out.println();
+            System.out.println("Cadastrado com sucesso!");
+            esperar();
+        }
+    }
+
+    @Override
+    public void manipular() {
+
+        do {
+            Interface.limpatela();
+            System.out.println("------DADOS CLIENTE------");
+            System.out.println("1 - MOSTRAR");
+            System.out.println("2 - ALTERAR");
+            System.out.println("3 - EXCLUIR");
+            System.out.println("4 - SAIR");
+
+            escolhaMenu = input.nextLine();
+
+            if (!escolhaMenu.equals("4")) {
+                System.out.println("--------------");
+                System.out.println("DIGITE O CPF: ");
+                this.setCpfConsulta(input.nextLine());
+
+                if (clientes.get(getCpfConsulta()) != null) {
+                    switch (escolhaMenu) {
+                        case "1":
+                            do {
+                                Interface.limpatela();
+                                System.out.println("CPF: " + getCpfConsulta());
+                                System.out.println("1 - DADOS DO CLIENTE");
+                                System.out.println("2 - SALDO");
+                                System.out.println("3 - SAIR");
+
+                                escolhaMenu = input.nextLine();
+                                if (!escolhaMenu.equals("3")) {
+                                    switch (escolhaMenu) {
+                                        case "1":
+                                            clientes.get(getCpfConsulta()).dados();
+                                            break;
+                                        case "2":
+                                            clientes.get(getCpfConsulta()).dadosConta();
+                                            break;
+                                        case "3":
+                                            System.out.println("SAINDO...");
+                                            break;
+                                }
+                            }
+                        }while (!escolhaMenu.equals("3")) ;
+                            break;
+                        case "2":
+                            clientes.get(getCpfConsulta()).alterar();
+                            break;
+                        case "3":
+                            Interface.limpatela();
+                            System.out.println("VOCÊ TEM CERTEZA QUE QUER REMOVER CPF: " + this.getCpfConsulta() + "?");
+                            System.out.println("1 - SIM");
+                            System.out.println("2 - NÃO");
+                            String escolhaCerteza = "0";
+                            escolhaCerteza = input.nextLine();
+
+                            if (escolhaCerteza.equals("1")) {
+                                clientes.remove(getCpfConsulta());
+                                System.out.println("REMOVIDO COM SUCESSO.");
+                                esperar();
+                            } else {
+                                System.out.println("SAINDO...");
+                            }
+                            break;
+                        case "4":
+                            System.out.println("SAINDO...");
+                    }
+                } else {
+                    System.out.println("CPF NÃO CADASTRADO");
+                    System.out.println("TENTE NOVAMENTE.");
+                    esperar();
+                }
+            }
+        } while (!escolhaMenu.equals("4"));
+    }
+
+    @Override
+    public void alterar() {
+        do {
+            Interface.limpatela();
+            System.out.println("-----ALTERAR-----");
+            System.out.println("1 - NOME");
+            System.out.println("2 - CPF");
+            System.out.println("3 - TELEFONE");
+            System.out.println("4 - SAIR");
+
+            escolhaMenu = input.nextLine();
+
+            switch (escolhaMenu) {
+                case "1":
+                    System.out.println("NOME ATUAL: " + this.getNome());
+                    System.out.println("DIGITE O NOVO NOME: ");
+                    this.setNome(input.nextLine());
+                    System.out.println("NOME ALTERADO COM SUCESSO!");
+                    esperar();
+                    break;
+                case "2":
+                    System.out.println("NAO E POSSIVEL MUDAR O CPF");
+                    System.out.println("EXCLUA ESSE CPF E CADASTRE OUTRO USUARIO NELE.");
+                    esperar();
+                    break;
+                case "3":
+                    System.out.println("TELEFONE ATUAL: " + this.getTelefone());
+                    System.out.println("DIGITE O NOVO TELEFONE: ");
+                    System.out.println("TELEFONE ALTERADO COM SUCESSO!");
+                    this.setTelefone(input.nextInt());
+                    esperar();
+                    break;
+                case "4":
+                    System.out.println("SAINDO...");
+                    break;
+            }
+        } while (!escolhaMenu.equals("4"));
+    }
+
+    public void dadosConta () {
+        Interface.limpatela();
+        System.out.println("-----------------------------");
+        System.out.println("    Dados da conta   ");
+        System.out.println("Conta de " + this.getNome());
+        System.out.println("Saldo: " + getSaldo());
+        esperar();
     }
 
     // METODOS ESPECIAIS
-    public String getTipoCliente() {
-        return tipoCliente;
+
+    public float getSaldo() {
+        return saldo;
     }
 
-    public void setTipoCliente(String tipoCliente) {
-        this.tipoCliente = tipoCliente;
+    public void setSaldo(float saldo) {
+        this.saldo = saldo;
     }
 
-    public String getPedidoCliente() {
-        return pedidoCliente;
-    }
+    public String getTipoCliente () {
+            return tipoCliente;
+        }
 
-    public void setPedidoCliente(String pedidoCliente) {
-        this.pedidoCliente = pedidoCliente;
-    }
+        public void setTipoCliente (String tipoCliente){
+            this.tipoCliente = tipoCliente;
+        }
 
-    public int getCodigoCliente() {
-        return codigoCliente;
-    }
+        public String getPedidoCliente () {
+            return pedidoCliente;
+        }
 
-    public void setCodigoCliente(int codigoCliente) {
-        this.codigoCliente = codigoCliente;
+        public void setPedidoCliente (String pedidoCliente){
+            this.pedidoCliente = pedidoCliente;
+        }
+
+        public int getCodigoCliente () {
+            return codigoCliente;
+        }
+
+        public void setCodigoCliente ( int codigoCliente){
+            this.codigoCliente = codigoCliente;
+        }
     }
-}
