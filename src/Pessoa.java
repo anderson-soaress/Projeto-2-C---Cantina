@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public abstract class Pessoa {
 
     // ATRIBUTOS
@@ -8,7 +10,18 @@ public abstract class Pessoa {
     protected int telefone;
     protected boolean cadastrado;
 
+    // OBJETOS
+    String espera = "0";
+    Scanner input = new Scanner(System.in);
+    protected String escolhaMenu;
+
     // METODOS
+
+    public void esperar(){
+        System.out.println("DIGITE QUALQUER COISA PARA CONTINUAR");
+        espera = input.nextLine();
+        espera = input.nextLine();
+    }
 
     public abstract void alterar();
     public abstract void manipular();
@@ -16,7 +29,8 @@ public abstract class Pessoa {
     public abstract void cadastrar();
     public abstract void dados();
 
-    // METODOS ESPECIAIS
+
+        // METODOS ESPECIAIS
 
     public String getNome() {
         return nome;
