@@ -7,6 +7,7 @@ public class Cliente extends Pessoa {
 
     // ATRIBUTOS
 
+    private float preco;
     private float saldo;
     private String tipoCliente;
     private String pedidoCliente;
@@ -34,7 +35,7 @@ public class Cliente extends Pessoa {
         this.setCpf(input.nextLine());
 
         System.out.println("Digite o número do cliente: ");
-        this.setTelefone(input.nextInt());
+        this.setTelefone(input.nextLine());
 
         Random cod = new Random();
         this.setCodigoCliente(cod.nextInt(200));
@@ -59,6 +60,14 @@ public class Cliente extends Pessoa {
             System.out.println("Não há dados desse cliente.");
             esperar();
         }
+    }
+
+    public void dadosConta() {
+        Interface.limpatela();
+        System.out.println("-----------------------------");
+        System.out.println("    Dados da conta   ");
+        System.out.println("Conta de " + this.getNome());
+        System.out.println("Saldo: " + this.getSaldo());
     }
 
     @Override
@@ -113,13 +122,14 @@ public class Cliente extends Pessoa {
                                             break;
                                         case "2":
                                             clientes.get(getCpfConsulta()).dadosConta();
+                                            esperar();
                                             break;
                                         case "3":
                                             System.out.println("SAINDO...");
                                             break;
+                                    }
                                 }
-                            }
-                        }while (!escolhaMenu.equals("3")) ;
+                            } while (!escolhaMenu.equals("3"));
                             break;
                         case "2":
                             clientes.get(getCpfConsulta()).alterar();
@@ -181,7 +191,7 @@ public class Cliente extends Pessoa {
                     System.out.println("TELEFONE ATUAL: " + this.getTelefone());
                     System.out.println("DIGITE O NOVO TELEFONE: ");
                     System.out.println("TELEFONE ALTERADO COM SUCESSO!");
-                    this.setTelefone(input.nextInt());
+                    this.setTelefone(input.nextLine());
                     esperar();
                     break;
                 case "4":
@@ -191,13 +201,113 @@ public class Cliente extends Pessoa {
         } while (!escolhaMenu.equals("4"));
     }
 
-    public void dadosConta () {
-        Interface.limpatela();
-        System.out.println("-----------------------------");
-        System.out.println("    Dados da conta   ");
-        System.out.println("Conta de " + this.getNome());
-        System.out.println("Saldo: " + getSaldo());
-        esperar();
+    public void depositar() {
+
+        System.out.println("-----SALDO-----");
+        System.out.println("DIGITE O CPF: ");
+        this.setCpfConsulta(input.nextLine());
+
+        if (clientes.get(getCpfConsulta()) != null) {
+
+            Interface.limpatela();
+            clientes.get(getCpfConsulta()).dadosConta();
+
+            System.out.println("DIGITE O VALOR PARA DEPÓSITO: ");
+            clientes.get(getCpfConsulta()).setSaldo(clientes.get(getCpfConsulta()).getSaldo() + Float.parseFloat(input.nextLine()));
+
+            System.out.println("DEPÓSITO REALIZADO COM SUCESSO!");
+            System.out.println("SALDO ATUAL: " + clientes.get(getCpfConsulta()).getSaldo());
+            esperar();
+
+        } else {
+            System.out.println("CPF NÃO CADASTRADO");
+            System.out.println("TENTE NOVAMENTE.");
+            esperar();
+        }
+
+    }
+
+    public void pagar() {
+        String escolhaOpcoes = "0";
+        String escolhaOpcoes2 = "0";
+        this.setPreco(0f);
+
+        do {
+            System.out.println("DIGITE O VALOR DO PRODUTO: ");
+            this.setPreco(this.getPreco() + Float.parseFloat(input.nextLine()));
+            System.out.println();
+            System.out.println("VALOR ATUAL: " + this.getPreco());
+            System.out.println("1 - ADICIONAR MAIS");
+            System.out.println("2 - FINALIZAR COMPRA");
+            escolhaOpcoes = input.nextLine();
+        } while (!escolhaOpcoes.equals("2"));
+
+        System.out.println("VALOR A SER PAGO: R$" + getPreco());
+
+        do {
+            System.out.println("FORMA DE PAGAMENTO: ");
+            System.out.println("1 - CONTA");
+            System.out.println("2 - PESSOALMENTE");
+            escolhaOpcoes2 = input.nextLine();
+
+            switch (escolhaOpcoes2){
+
+                case "1": // PAGAR USANDO CONTA
+
+                    Interface.limpatela();
+                    System.out.println("-----PAGAMENTO-----");
+                    System.out.println("DIGITE O CPF: ");
+                    this.setCpfConsulta(input.nextLine());
+
+                    if (clientes.get(getCpfConsulta()) != null) {
+                        String escolhaCompra = "0";
+
+                        Interface.limpatela();
+                        clientes.get(getCpfConsulta()).dadosConta();
+                        System.out.println();
+                        System.out.println("VALOR A SER PAGO: " + this.getPreco());
+                        System.out.println("CONFIRMAR COMPRA? ");
+                        System.out.println("1 - SIM");
+                        System.out.println("2 - NÃO");
+                        escolhaCompra = input.nextLine();
+
+                        switch (escolhaCompra){
+                            case "1":
+                                if (clientes.get(getCpfConsulta()).getSaldo() >= this.getPreco()){
+
+                                    Interface.limpatela();
+                                    clientes.get(getCpfConsulta()).setSaldo(clientes.get(getCpfConsulta()).getSaldo() - getPreco());
+                                    System.out.println("PAGO COM SUCESSO!");
+                                    System.out.println("SALDO ATUAL: " + clientes.get(getCpfConsulta()).getSaldo());
+                                    escolhaOpcoes2 = "2";
+                                    esperar();
+
+                                } else {
+                                    System.out.println("SALDO INSUFICIENTE!");
+                                    esperar();
+                                }
+
+                                break;
+                            case "2":
+
+                        }
+                    } else {
+                        System.out.println("CPF NÃO CADASTRADO");
+                        System.out.println("TENTE NOVAMENTE.");
+                        esperar();
+
+                    }
+
+                    break;
+                case "2": // PAGAR PESSOALMENTE
+                    Interface.limpatela();
+                    System.out.println("VALOR A SER PAGO: R$" + this.getPreco());
+                    esperar();
+                    break;
+
+            }
+        } while(!escolhaOpcoes2.equals("2"));
+
     }
 
     // METODOS ESPECIAIS
@@ -210,27 +320,35 @@ public class Cliente extends Pessoa {
         this.saldo = saldo;
     }
 
-    public String getTipoCliente () {
-            return tipoCliente;
-        }
-
-        public void setTipoCliente (String tipoCliente){
-            this.tipoCliente = tipoCliente;
-        }
-
-        public String getPedidoCliente () {
-            return pedidoCliente;
-        }
-
-        public void setPedidoCliente (String pedidoCliente){
-            this.pedidoCliente = pedidoCliente;
-        }
-
-        public int getCodigoCliente () {
-            return codigoCliente;
-        }
-
-        public void setCodigoCliente ( int codigoCliente){
-            this.codigoCliente = codigoCliente;
-        }
+    public String getTipoCliente() {
+        return tipoCliente;
     }
+
+    public void setTipoCliente(String tipoCliente) {
+        this.tipoCliente = tipoCliente;
+    }
+
+    public String getPedidoCliente() {
+        return pedidoCliente;
+    }
+
+    public void setPedidoCliente(String pedidoCliente) {
+        this.pedidoCliente = pedidoCliente;
+    }
+
+    public int getCodigoCliente() {
+        return codigoCliente;
+    }
+
+    public void setCodigoCliente(int codigoCliente) {
+        this.codigoCliente = codigoCliente;
+    }
+
+    public float getPreco() {
+        return preco;
+    }
+
+    public void setPreco(float preco) {
+        this.preco = preco;
+    }
+}
