@@ -1,6 +1,5 @@
-import java.util.Random;
 
-public class Pedido {
+public class Produto {
 
     // ATRIBUTOS
 
