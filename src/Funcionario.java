@@ -30,7 +30,7 @@ public class Funcionario extends Pessoa{
         this.setCpf(input.nextLine());
 
         System.out.println("Digite o número do funcionario: ");
-        this.setTelefone(input.nextInt());
+        this.setTelefone(input.nextLine());
 
         this.setCadastrado(true);
     }
@@ -144,7 +144,7 @@ public class Funcionario extends Pessoa{
                 case "3":
                     System.out.println("TELEFONE ATUAL: " + this.getTelefone());
                     System.out.println("DIGITE O NOVO TELEFONE: ");
-                    this.setTelefone(input.nextInt());
+                    this.setTelefone(input.nextLine());
                     System.out.println("TELEFONE ALTERADO COM SUCESSO!");
                     esperar();
                     break;
