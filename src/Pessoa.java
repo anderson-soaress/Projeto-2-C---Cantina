@@ -7,7 +7,7 @@ public abstract class Pessoa {
     protected String cpfConsulta;
     protected String nome;
     protected String cpf;
-    protected int telefone;
+    protected String telefone;
     protected boolean cadastrado;
 
     // OBJETOS
@@ -19,7 +19,6 @@ public abstract class Pessoa {
 
     public void esperar(){
         System.out.println("DIGITE QUALQUER COISA PARA CONTINUAR");
-        espera = input.nextLine();
         espera = input.nextLine();
     }
 
@@ -48,11 +47,11 @@ public abstract class Pessoa {
         this.cpf = cpf;
     }
 
-    public int getTelefone() {
+    public String getTelefone() {
         return telefone;
     }
 
-    public void setTelefone(int telefone) {
+    public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
 
