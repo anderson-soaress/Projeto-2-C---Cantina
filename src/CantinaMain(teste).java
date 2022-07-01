@@ -17,69 +17,88 @@ public class CantinaMain {
             System.out.println("------MENU------");
             System.out.println("1 - CADASTRAR");
             System.out.println("2 - DADOS");
-            System.out.println("3 - SAIR");
+            System.out.println("3 - ACOES");
+            System.out.println("4 - SAIR");
             System.out.println("----------------");
 
             escolhaMenu = input.nextLine();
 
             switch (escolhaMenu) {
 
-            case "1": // MENU DE CADASTRO
+                case "1": // MENU DE CADASTRO
 
-                do {
+                        Interface.limpatela();
+                        System.out.println("-----CADASTRO-----");
+                        System.out.println("1 - CLIENTE");
+                        System.out.println("2 - FUNCIONARIO");
+                        System.out.println("3 - SAIR");
+                        escolhaOpcoes = input.nextLine();
+
+                        switch (escolhaOpcoes) {
+                            case "1": // CADASTRO CLIENTE
+                                CL.cadastrar();
+                                break;
+                            case "2":
+                                F.cadastrar(); // CADASTRO FUNCIONARIO
+                                break;
+                            case "3": // SAIR DO MENU DE CADASTRO
+                                System.out.println("SAINDO...");
+                                break;
+                        }
+
+                    break;
+
+                case "2": // MENU DE DADOS
+
                     Interface.limpatela();
-                    System.out.println("-----CADASTRO-----");
+                    System.out.println("-----DADOS-----");
                     System.out.println("1 - CLIENTE");
                     System.out.println("2 - FUNCIONARIO");
                     System.out.println("3 - SAIR");
                     escolhaOpcoes = input.nextLine();
 
-                    switch (escolhaOpcoes){
-                        case "1": // CADASTRO CLIENTE
-                            CL.cadastrar();
+                    switch (escolhaOpcoes) {
+                        case "1": // DADOS CLIENTE
+                            CL.manipular();
                             break;
-                        case "2":
-                            F.cadastrar(); // CADASTRO FUNCIONARIO
+                        case "2": // DADOS FUNCIONARIO
+                            F.manipular();
                             break;
-                        case "3": // SAIR DO MENU DE CADASTRO
+                        case "3": // SAIR DO MENU DE DADOS
                             System.out.println("SAINDO...");
                             break;
                     }
 
+                    break;
 
-                } while (!escolhaOpcoes.equals("3"));
+                case "3": // AÇÕES
 
-                break;
+                    Interface.limpatela();
+                    System.out.println("-----ACOES-----");
+                    System.out.println("1 - DEPOSITAR");
+                    System.out.println("2 - PAGAR");
+                    System.out.println("3 - SAIR");
+                    escolhaOpcoes = input.nextLine();
 
-            case "2": // MENU DE DADOS
-                Interface.limpatela();
-                System.out.println("-----DADOS-----");
-                System.out.println("1 - CLIENTE");
-                System.out.println("2 - FUNCIONARIO");
-                System.out.println("3 - SAIR");
-                escolhaOpcoes = input.nextLine();
+                        switch (escolhaOpcoes){
+                            case "1":
+                                CL.depositar();
+                                break;
+                            case "2":
+                                CL.pagar();
+                                break;
+                            case "3":
+                                System.out.println("SAINDO...");
+                                break;
+                        }
 
-                switch (escolhaOpcoes){
-                    case "1": // DADOS CLIENTE
-                        CL.manipular();
-                        break;
-                    case "2": // DADOS FUNCIONARIO
-                        F.manipular();
-                        break;
-                    case "3": // SAIR DO MENU DE DADOS
-                        System.out.println("SAINDO...");
-                        break;
-                }
-
-                break;
-
-            case "3": // SAIR DO PROGRAMA
-                System.out.println("Saindo...");
-                break;
+                case "4":// SAIR DO PROGRAMA
+                    System.out.println("Saindo...");
+                    break;
 
             }
 
-        } while (!escolhaMenu.equals("3"));
+        } while (!escolhaMenu.equals("4"));
 
     }
 }
