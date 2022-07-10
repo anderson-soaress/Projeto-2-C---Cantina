@@ -19,7 +19,7 @@ public class Funcionario extends Pessoa{
     public void coletar() {
 
         Interface.limpatela();
-        System.out.println("-----------------------------------------");
+        System.out.println("----------CADASTRO------------");
         System.out.println("Digite o nome do funcionario: ");
         this.setNome(input.nextLine());
 
@@ -38,12 +38,12 @@ public class Funcionario extends Pessoa{
     public void dados() {
         if (this.isCadastrado()) {
             Interface.limpatela();
-            System.out.println("-----------------------------------------");
-            System.out.println("    Dados do funcionario    ");
-            System.out.println("Funcionario: " + getNome());
-            System.out.println(getEspecialidade());
-            System.out.println("CPF: " + getCpf());
-            System.out.println("Telefone: " + getTelefone());
+            System.out.println("-----DADOS DO FUNCIONARIO-----");
+            System.out.println("| FUNCIONARIO: " + getNome() + " |");
+            System.out.println("| " + getEspecialidade() + " |");
+            System.out.println("| CPF: " + getCpf() + " |");
+            System.out.println("| TELEFONE: " + getTelefone() + " |");
+            System.out.println("-------------------------------");
             esperar();
         } else {
             System.out.println("Não há dados desse funcionario.");
@@ -68,12 +68,12 @@ public class Funcionario extends Pessoa{
     public void manipular() {
         do {
             Interface.limpatela();
-            System.out.println("------DADOS------");
-            System.out.println("1 - MOSTRAR");
-            System.out.println("2 - ALTERAR");
-            System.out.println("3 - EXCLUIR");
-            System.out.println("4 - SAIR");
-
+            System.out.println("------DADOS FUNCIONARIO------");
+            System.out.println("| 1 - MOSTRAR               |");
+            System.out.println("| 2 - ALTERAR               |");
+            System.out.println("| 3 - EXCLUIR               |");
+            System.out.println("| 4 - SAIR                  |");
+            System.out.println("-----------------------------");
             escolhaMenu = input.nextLine();
 
             if (!escolhaMenu.equals("4")) {
@@ -121,10 +121,11 @@ public class Funcionario extends Pessoa{
         do {
             Interface.limpatela();
             System.out.println("-----ALTERAR-----");
-            System.out.println("1 - NOME");
-            System.out.println("2 - CPF");
-            System.out.println("3 - TELEFONE");
-            System.out.println("4 - SAIR");
+            System.out.println("| 1 - NOME      |");
+            System.out.println("| 2 - CPF       |");
+            System.out.println("| 3 - TELEFONE  |");
+            System.out.println("| 4 - SAIR      |");
+            System.out.println("-----------------");
 
             escolhaMenu = input.nextLine();
 
