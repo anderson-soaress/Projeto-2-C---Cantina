@@ -18,6 +18,7 @@ public class Cliente extends Pessoa {
     HashMap<String, Cliente> clientes = new HashMap<String, Cliente>();
     String espera = "1";
 
+
     // METODOS
 
     @Override
@@ -49,12 +50,13 @@ public class Cliente extends Pessoa {
     public void dados() {
         if (this.isCadastrado()) {
             Interface.limpatela();
-            System.out.println("-----Dados do cliente-----");
-            System.out.println("Cliente: " + getNome());
-            System.out.println(getTipoCliente());
-            System.out.println("CPF: " + getCpf());
-            System.out.println("Telefone: " + getTelefone());
-            System.out.println("Codigo do cliente: " + getCodigoCliente());
+            System.out.println("-----DADOS DO CLIENTE-----");
+            System.out.println("| Cliente: " + getNome() + " |");
+            System.out.println("| " + getTipoCliente() + " |");
+            System.out.println("| CPF: " + getCpf() + " |");
+            System.out.println("| Telefone: " + getTelefone() + " |");
+            System.out.println("| Codigo do cliente: " + getCodigoCliente() + " |");
+            System.out.println("---------------------------");
             esperar();
         } else {
             System.out.println("Não há dados desse cliente.");
@@ -64,10 +66,10 @@ public class Cliente extends Pessoa {
 
     public void dadosConta() {
         Interface.limpatela();
-        System.out.println("-----------------------------");
-        System.out.println("    Dados da conta   ");
-        System.out.println("Conta de " + this.getNome());
-        System.out.println("Saldo: " + this.getSaldo());
+        System.out.println("------DADOS DA CONTA------");
+        System.out.println("| Conta de " + this.getNome() + " |");
+        System.out.println("| Saldo: " + this.getSaldo() + " |");
+        System.out.println("--------------------------");
     }
 
     @Override
@@ -92,10 +94,11 @@ public class Cliente extends Pessoa {
         do {
             Interface.limpatela();
             System.out.println("------DADOS CLIENTE------");
-            System.out.println("1 - MOSTRAR");
-            System.out.println("2 - ALTERAR");
-            System.out.println("3 - EXCLUIR");
-            System.out.println("4 - SAIR");
+            System.out.println("| 1 - MOSTRAR           |");
+            System.out.println("| 2 - ALTERAR           |");
+            System.out.println("| 3 - EXCLUIR           |");
+            System.out.println("| 4 - SAIR              |");
+            System.out.println("-------------------------");
 
             escolhaMenu = input.nextLine();
 
@@ -109,10 +112,12 @@ public class Cliente extends Pessoa {
                         case "1":
                             do {
                                 Interface.limpatela();
-                                System.out.println("CPF: " + getCpfConsulta());
-                                System.out.println("1 - DADOS DO CLIENTE");
-                                System.out.println("2 - SALDO");
-                                System.out.println("3 - SAIR");
+                                System.out.println("----------DADOS---------");
+                                System.out.println("| CLIENTE: " + getCpfConsulta() + "         |");
+                                System.out.println("| 1 - DADOS DO CLIENTE |");
+                                System.out.println("| 2 - SALDO            |");
+                                System.out.println("| 3 - SAIR             |");
+                                System.out.println("------------------------");
 
                                 escolhaMenu = input.nextLine();
                                 if (!escolhaMenu.equals("3")) {
@@ -167,10 +172,11 @@ public class Cliente extends Pessoa {
         do {
             Interface.limpatela();
             System.out.println("-----ALTERAR-----");
-            System.out.println("1 - NOME");
-            System.out.println("2 - CPF");
-            System.out.println("3 - TELEFONE");
-            System.out.println("4 - SAIR");
+            System.out.println("| 1 - NOME      |");
+            System.out.println("| 2 - CPF       |");
+            System.out.println("| 3 - TELEFONE  |");
+            System.out.println("| 4 - SAIR      |");
+            System.out.println("-----------------");
 
             escolhaMenu = input.nextLine();
 
