@@ -17,7 +17,7 @@ public class Produto {
     String escolhaMenu;
     String espera;
     Scanner input = new Scanner(System.in);
-    HashMap <String, Produto> produtos = new HashMap<String,Produto>();
+    public HashMap <String, Produto> produtos = new HashMap<String,Produto>();
 
     public void esperar(){
         System.out.println("DIGITE QUALQUER COISA PARA CONTINUAR");
@@ -55,8 +55,8 @@ public class Produto {
         Produto produto = new Produto();
         produto.coletar();
 
-        if (produtos.containsKey(getCodigo())) {
-            System.out.println("Este cpf já foi informado.");
+        if (produtos.containsKey(produto.getCodigo())) {
+            System.out.println("Este codigo já foi informado.");
             esperar();
         } else {
             produtos.put(produto.getCodigo(), produto);
@@ -112,7 +112,7 @@ public class Produto {
                             System.out.println("SAINDO...");
                     }
                 } else {
-                    System.out.println("CPF NÃO CADASTRADO");
+                    System.out.println("NAO HA UM PRODUTO COM ESTE CODIGO");
                     System.out.println("TENTE NOVAMENTE.");
                     esperar();
                 }
