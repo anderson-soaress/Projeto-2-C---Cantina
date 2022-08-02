@@ -1,4 +1,3 @@
-
 import java.util.HashMap;
 import java.util.Random;
 import java.util.Scanner;
@@ -77,7 +76,7 @@ public class Cliente extends Pessoa {
         Cliente cliente = new Cliente();
         cliente.coletar();
 
-        if (clientes.containsKey(getCpf())) {
+        if (clientes.containsKey(cliente.getCpf())) {
             System.out.println("Este cpf já foi informado.");
             esperar();
         } else {
