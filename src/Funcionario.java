@@ -55,7 +55,7 @@ public class Funcionario extends Pessoa{
         Funcionario funcionario = new Funcionario();
         funcionario.coletar();
 
-        if (funcionarios.containsKey(getCpf())) {
+        if (funcionarios.containsKey(funcionario.getCpf())) {
             System.out.println("Este cpf já foi informado.");
             esperar();
         } else {
